@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+import Icon from './components/icon'
+Vue.use(Icon)
+
 import Alert from './components/alert'
 Vue.use(Alert)
 

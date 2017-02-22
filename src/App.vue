@@ -13,11 +13,28 @@
   
       <section>
         <h4>对话框</h4>
-        <button @click="dialogToggle = !dialogToggle">Dialog开关</button>
+        <fr-button type="primary" @click="dialogToggle = !dialogToggle">测试按钮</fr-button>
 
         <fr-dialog v-model="dialogToggle" size="large" :showBackDrop="true" :showClose="true" :showCancel="true" title="组件的标题" @confirm="dialogConfirm">
           内容在这里
         </fr-dialog>
+      </section>
+
+      <section>
+        <h4>按钮类型</h4>
+        <fr-button>测试按钮</fr-button>
+        <fr-button type="primary">测试按钮</fr-button>
+        <fr-button type="info">测试按钮</fr-button>
+        <fr-button type="success">测试按钮</fr-button>
+        <fr-button type="warning">测试按钮</fr-button>
+        <fr-button type="danger">测试按钮</fr-button>
+        <h4>按钮大小</h4>
+        <fr-button type="primary" size="large">测试按钮</fr-button>
+        <fr-button type="primary">测试按钮</fr-button>
+        <fr-button type="primary" size="small">测试按钮</fr-button>
+        <fr-button type="primary" size="tiny">测试按钮</fr-button>
+        <h4>按钮禁用</h4>
+        <fr-button type="primary" :disabled="true">测试按钮</fr-button>
       </section>
     </div>
   </div>

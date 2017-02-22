@@ -9,8 +9,8 @@
         <slot></slot>
       </main>
       <footer>
-        <a v-if="showCancel" href="javascript:;" @click="close()">取消</a>
-        <a href="javascript:;" @click="confirm()">确认</a>
+        <fr-button v-if="showCancel" @click="close()">取消</fr-button>
+        <fr-button v-if="showCancel" type="primary" @click="confirm()">确定</fr-button>
       </footer>
     </div>
   </div>
@@ -71,7 +71,7 @@ export default {
 
 <style lang="scss" scoped>
 .dialog-box {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;

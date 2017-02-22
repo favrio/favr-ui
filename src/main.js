@@ -13,6 +13,9 @@ Vue.use(Alert)
 import Dialog from './components/dialog'
 Vue.use(Dialog)
 
+import Notification from './components/notification'
+Vue.use(Notification)
+
 new Vue({
   el: '#app',
   render: h => h(App)

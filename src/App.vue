@@ -45,6 +45,20 @@
           <icon type="favor"></icon>
           喜欢选项
         </fr-button>
+        <fr-button type="primary" size="small">
+          <icon type="favor"></icon>
+          测试按钮
+        </fr-button>
+        <fr-button type="primary" size="tiny">
+          <icon type="favor"></icon>
+          测试按钮
+        </fr-button>
+      </section>
+
+      <section>
+        <h4>提示</h4>
+        <fr-button type="primary" @click="triggerNotifc()">触发提示</fr-button>        
+        <!-- <fr-notification></fr-notification> -->
       </section>
     </div>
   </div>
@@ -63,6 +77,9 @@ export default {
   methods: {
     dialogConfirm () {
       console.log('Yes, click the confirm in dialog.')
+    },
+    triggerNotifc () {
+      this.$notification()
     }
   }
 }

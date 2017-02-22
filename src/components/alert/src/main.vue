@@ -8,7 +8,7 @@
     </div>
     
     <div class="close" v-if="closable" @click="close()">
-      {{closeText}}
+      <icon type="close"></icon>
     </div>
   </div>
 </template>
@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     close () {
-      this.visible = false;
+      this.visible = false
     }
   }
 }

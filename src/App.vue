@@ -35,6 +35,16 @@
         <fr-button type="primary" size="tiny">测试按钮</fr-button>
         <h4>按钮禁用</h4>
         <fr-button type="primary" :disabled="true">测试按钮</fr-button>
+          
+        <h4>带有icon的按钮</h4>
+        <fr-button type="primary">
+          <icon type="refresh_light"></icon>
+          删除选项
+        </fr-button>
+        <fr-button>
+          <icon type="favor"></icon>
+          喜欢选项
+        </fr-button>
       </section>
     </div>
   </div>

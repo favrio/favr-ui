@@ -2,6 +2,12 @@
 
 > A Vue.js project
 
+## Todo List
+- [ ] button
+- [ ] alert
+- [ ] dialog
+- [ ] icon
+
 ## Build Setup
 
 ``` bash

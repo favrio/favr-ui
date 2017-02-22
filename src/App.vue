@@ -7,10 +7,12 @@
 
     <div id="show">
       <section>
+        <h4>警示框</h4>
         <fr-alert title="测试用的标题噢" description="描述在这里，可以通过props传入，更轻松。"></fr-alert>
       </section>
   
       <section>
+        <h4>对话框</h4>
         <button @click="dialogToggle = !dialogToggle">Dialog开关</button>
 
         <fr-dialog v-model="dialogToggle" size="large" :showBackDrop="true" :showClose="true" :showCancel="true" title="组件的标题" @confirm="dialogConfirm">
@@ -58,5 +60,8 @@ a {
 }
 section {
   margin-bottom: 40px;
+  h4 {
+    margin: 10px 0;
+  }
 }
 </style>

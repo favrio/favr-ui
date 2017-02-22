@@ -80,6 +80,9 @@ export default {
   &.hide-backdrop {
     background: none;
     pointer-events: none;
+    .dialog {
+      pointer-events: auto;
+    }
   }
   &.dialog-tiny {
     .dialog {

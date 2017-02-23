@@ -5,7 +5,7 @@
       <p>{{msg}}</p>
     </div>
 
-    <div id="show">
+    <div id="show" style="width: 600px; margin: 0 auto;">
       <section>
         <h4>警示框</h4>
         <fr-alert title="测试用的标题噢" description="描述在这里，可以通过props传入，更轻松。"></fr-alert>
@@ -13,10 +13,20 @@
   
       <section>
         <h4>对话框</h4>
-        <fr-button type="primary" @click="dialogToggle = !dialogToggle">测试按钮</fr-button>
+        <fr-button type="primary" @click="dialogToggle = !dialogToggle">打开对话框</fr-button>
 
         <fr-dialog v-model="dialogToggle" size="large" :showBackDrop="true" :showClose="true" :showCancel="true" title="组件的标题" @confirm="dialogConfirm">
-          内容在这里
+          <p>
+            在Web开发易访问性意味着使尽可能多的人能够使用Web站点,即使这些人的能力是有限的。这里我们提供关于开发易访问的内容的信息。
+          </p>
+
+          <p>
+            “易访问性是最常用于描述设施或设施,帮助残疾人,如“轮椅”。这可以扩展到盲文标识、轮椅坡道,音频信号在人行横道,轮廓人行道,网站设计,等等。
+          </p>
+           
+          <p>
+            "网络从根本上是为了为所有的人工作, 无论他们的硬件、软件、语言、文化、位置或身体或精神能力。当网络达到这一目标,它可以访问不同的人的听觉范围,运动,和认知能力。无论他们的硬件、软件、语言、文化、位置或身体或精神能力。当网络达到这一目标,它可以访问不同的人的听觉范围,运动,和认知能力。"
+          </p>
         </fr-dialog>
       </section>
 
@@ -56,8 +66,10 @@
       </section>
 
       <section>
-        <h4>提示</h4>
-        <fr-button type="primary" @click="triggerNotifc()">触发提示</fr-button>        
+        <h4>信息提示</h4>
+        <fr-button type="primary" @click="triggerNotifc()">触发成功</fr-button>       
+        <fr-button type="primary" @click="triggerNotifc2()">触发错误</fr-button>
+        <fr-button type="primary" @click="triggerNotifc3()">触发警告</fr-button>
         <!-- <fr-notification></fr-notification> -->
       </section>
     </div>
@@ -79,7 +91,19 @@ export default {
       console.log('Yes, click the confirm in dialog.')
     },
     triggerNotifc () {
-      this.$notification()
+      this.$notification({
+        type: 'success'
+      })
+    },
+    triggerNotifc2 () {
+      this.$notification({
+        type: 'error'
+      })
+    },
+    triggerNotifc3 () {
+      this.$notification({
+        type: 'warning'
+      })
     }
   }
 }

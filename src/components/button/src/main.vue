@@ -59,6 +59,9 @@ export default {
   padding: 10px 15px;
   font-size: 14px;
   border-radius: 4px;
+  &:hover {
+    opacity: 0.8;
+  }
   &.button-primary {
     color: #fff;
     background-color: #20a0ff;

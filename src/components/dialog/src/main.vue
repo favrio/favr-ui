@@ -1,5 +1,5 @@
 <template>
-  <div class="dialog-box" v-if="value" :class="[toggleClass, sizeClass]">
+  <div class="dialog-box" v-show="value" :class="[toggleClass, sizeClass]">
     <div class="dialog">
       <header>
         <span>头部标题</span>
@@ -77,6 +77,7 @@ export default {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.7);
+  overflow: scroll;
   &.hide-backdrop {
     background: none;
     pointer-events: none;
@@ -103,7 +104,7 @@ export default {
 .dialog {
   width: 400px;
   background: #fff;
-  margin: 60px auto 0;
+  margin: 60px auto 40px;
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0,0,0,.3);
   box-sizing: border-box;

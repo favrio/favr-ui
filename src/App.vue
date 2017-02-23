@@ -2,7 +2,7 @@
   <div id="app">
     <div class="header">
       <img class="logo" src="./assets/logo.png">
-      <p>{{msg}}</p>
+      <p>FavrUi is a ui toolkit for vue.</p>
     </div>
 
     <div id="show" style="width: 600px; margin: 0 auto;">
@@ -15,7 +15,19 @@
         <h4>对话框</h4>
         <fr-button type="primary" @click="dialogToggle = !dialogToggle">打开对话框</fr-button>
 
-        <fr-dialog v-model="dialogToggle" size="large" :showBackDrop="true" :showClose="true" :showCancel="true" title="组件的标题" @confirm="dialogConfirm">
+        <fr-dialog v-model="dialogToggle" size="midium" :showBackDrop="true" :showClose="true" :showCancel="true" title="组件的标题" @confirm="dialogConfirm">
+          <p>
+            在Web开发易访问性意味着使尽可能多的人能够使用Web站点,即使这些人的能力是有限的。这里我们提供关于开发易访问的内容的信息。
+          </p>
+
+          <p>
+            “易访问性是最常用于描述设施或设施,帮助残疾人,如“轮椅”。这可以扩展到盲文标识、轮椅坡道,音频信号在人行横道,轮廓人行道,网站设计,等等。
+          </p>
+           
+          <p>
+            "网络从根本上是为了为所有的人工作, 无论他们的硬件、软件、语言、文化、位置或身体或精神能力。当网络达到这一目标,它可以访问不同的人的听觉范围,运动,和认知能力。无论他们的硬件、软件、语言、文化、位置或身体或精神能力。当网络达到这一目标,它可以访问不同的人的听觉范围,运动,和认知能力。"
+          </p>
+
           <p>
             在Web开发易访问性意味着使尽可能多的人能够使用Web站点,即使这些人的能力是有限的。这里我们提供关于开发易访问的内容的信息。
           </p>
@@ -82,7 +94,6 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Hello my vue world!',
       dialogToggle: false
     }
   },

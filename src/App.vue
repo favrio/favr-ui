@@ -13,9 +13,37 @@
   
       <section>
         <h4>对话框</h4>
+
         <fr-button type="primary" @click="dialogToggle = !dialogToggle">打开对话框</fr-button>
+        <fr-button type="primary" @click="dialogToggle2 = !dialogToggle2">打开不带mask对话框</fr-button>
 
         <fr-dialog v-model="dialogToggle" size="midium" :showBackDrop="true" :showClose="true" :showCancel="true" title="组件的标题" @confirm="dialogConfirm">
+          <p>
+            在Web开发易访问性意味着使尽可能多的人能够使用Web站点,即使这些人的能力是有限的。这里我们提供关于开发易访问的内容的信息。
+          </p>
+
+          <p>
+            “易访问性是最常用于描述设施或设施,帮助残疾人,如“轮椅”。这可以扩展到盲文标识、轮椅坡道,音频信号在人行横道,轮廓人行道,网站设计,等等。
+          </p>
+           
+          <p>
+            "网络从根本上是为了为所有的人工作, 无论他们的硬件、软件、语言、文化、位置或身体或精神能力。当网络达到这一目标,它可以访问不同的人的听觉范围,运动,和认知能力。无论他们的硬件、软件、语言、文化、位置或身体或精神能力。当网络达到这一目标,它可以访问不同的人的听觉范围,运动,和认知能力。"
+          </p>
+
+          <p>
+            在Web开发易访问性意味着使尽可能多的人能够使用Web站点,即使这些人的能力是有限的。这里我们提供关于开发易访问的内容的信息。
+          </p>
+
+          <p>
+            “易访问性是最常用于描述设施或设施,帮助残疾人,如“轮椅”。这可以扩展到盲文标识、轮椅坡道,音频信号在人行横道,轮廓人行道,网站设计,等等。
+          </p>
+           
+          <p>
+            "网络从根本上是为了为所有的人工作, 无论他们的硬件、软件、语言、文化、位置或身体或精神能力。当网络达到这一目标,它可以访问不同的人的听觉范围,运动,和认知能力。无论他们的硬件、软件、语言、文化、位置或身体或精神能力。当网络达到这一目标,它可以访问不同的人的听觉范围,运动,和认知能力。"
+          </p>
+        </fr-dialog>
+
+        <fr-dialog v-model="dialogToggle2" size="midium" :showBackDrop="false" :showClose="true" :showCancel="true" title="组件的标题" @confirm="dialogConfirm">
           <p>
             在Web开发易访问性意味着使尽可能多的人能够使用Web站点,即使这些人的能力是有限的。这里我们提供关于开发易访问的内容的信息。
           </p>
@@ -82,7 +110,25 @@
         <fr-button type="primary" @click="triggerNotifc()">触发成功</fr-button>       
         <fr-button type="primary" @click="triggerNotifc2()">触发错误</fr-button>
         <fr-button type="primary" @click="triggerNotifc3()">触发警告</fr-button>
-        <!-- <fr-notification></fr-notification> -->
+      </section>
+
+      <section>
+        <h4>内容loading</h4>
+        <fr-button>触发内容读取</fr-button>
+        <fr-button>触发全局读取</fr-button>
+        <div class="load-content">
+          <p>
+            在Web开发易访问性意味着使尽可能多的人能够使用Web站点,即使这些人的能力是有限的。这里我们提供关于开发易访问的内容的信息。
+          </p>
+
+          <p>
+            “易访问性是最常用于描述设施或设施,帮助残疾人,如“轮椅”。这可以扩展到盲文标识、轮椅坡道,音频信号在人行横道,轮廓人行道,网站设计,等等。
+          </p>
+           
+          <p>
+            "网络从根本上是为了为所有的人工作, 无论他们的硬件、软件、语言、文化、位置或身体或精神能力。当网络达到这一目标,它可以访问不同的人的听觉范围,运动,和认知能力。无论他们的硬件、软件、语言、文化、位置或身体或精神能力。当网络达到这一目标,它可以访问不同的人的听觉范围,运动,和认知能力。"
+          </p>
+        </div>
       </section>
     </div>
   </div>
@@ -94,25 +140,31 @@ export default {
   name: 'app',
   data () {
     return {
-      dialogToggle: false
+      dialogToggle: false,
+      dialogToggle2: false
     }
   },
   methods: {
     dialogConfirm () {
-      console.log('Yes, click the confirm in dialog.')
+      this.$message({
+        type: 'success',
+        content: '你点击了确定'
+      })
     },
     triggerNotifc () {
-      this.$notification({
-        type: 'success'
+      this.$message({
+        type: 'success',
+        content: '这是一条成功的提示'
       })
     },
     triggerNotifc2 () {
-      this.$notification({
-        type: 'error'
+      this.$message({
+        type: 'error',
+        content: '这是一条错误的提示'
       })
     },
     triggerNotifc3 () {
-      this.$notification({
+      this.$message({
         type: 'warning'
       })
     }
@@ -142,5 +194,12 @@ section {
   h4 {
     margin: 10px 0;
   }
+}
+.load-content {
+  border: 1px solid #e3e3e3;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 4px;
+  color: #3c3c3c;
 }
 </style>

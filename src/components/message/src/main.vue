@@ -1,9 +1,9 @@
 <template>
   <transition name="fade">
-    <div class="notification" :class="[typeClass]" v-if="visible" @mouseenter="clearTimer" @mouseleave="startTimer">
+    <div class="message" :class="[typeClass]" v-if="visible" @mouseenter="clearTimer" @mouseleave="startTimer">
       <img :src="iconResource" />
       <div class="content">
-        测试提示内容
+        {{content}}
       </div>
       <div class="close-box">
         <icon type="close" @click="close()"></icon>
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'FrNotification',
+  name: 'FrMessage',
   props: {
   },
   data () {
@@ -22,7 +22,8 @@ export default {
       visible: true,
       type: 'error',
       timer: null,
-      duration: 3000
+      duration: 3000,
+      content: '你点击了确定'
     }
   },
   mounted () {
@@ -64,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.notification {
+.message {
   display: flex;
   position: relative;
   height: 40px;

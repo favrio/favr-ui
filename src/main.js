@@ -13,8 +13,8 @@ Vue.use(Alert)
 import Dialog from './components/dialog'
 Vue.use(Dialog)
 
-import Notification from './components/notification'
-Vue.use(Notification)
+import Message from './components/message'
+Vue.use(Message)
 
 new Vue({
   el: '#app',
